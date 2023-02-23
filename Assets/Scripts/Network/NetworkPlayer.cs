@@ -21,7 +21,7 @@ public class NetworkPlayer : NetworkBehaviour
             go.transform.Translate(new Vector3(0, 0, -5));
             go.GetComponentInChildren<Renderer>().material.color = Color.red;
         }
-        go.GetComponent<NetworkObject>().Spawn();
+        go.GetComponent<NetworkObject>().SpawnWithOwnership(OwnerClientId);
     }
 
     private void OnEnable()
